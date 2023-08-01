@@ -8,7 +8,7 @@ import { isSecurePassword } from "./index.js";
 
 // Test 1: Verificar que la función devuelva true para una contraseña segura
 test("Debería devolver true para una contraseña segura", () => {
-  const securePassword = "Abcd123!@Efgh";
+  const securePassword = "Abcdef123!8@Efgh";
   expect(isSecurePassword(securePassword)).toBe(true);
 });
 

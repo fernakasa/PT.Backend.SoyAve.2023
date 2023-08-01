@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Formulario de Tareas</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mx-auto p-8">
+      <h1 class="text-4xl font-bold mb-4">Formulario de Tareas</h1>
+      <form id="taskForm" class="bg-white p-6 rounded shadow mb-4">
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="taskName"
+            >Nombre de la Tarea:</label
+          >
+          <input
+            type="text"
+            id="taskName"
+            required
+            class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
+
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="taskDate"
+            >Fecha:</label
+          >
+          <input
+            type="date"
+            id="taskDate"
+            required
+            class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
+
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="taskPriority"
+            >Prioridad:</label
+          >
+          <select
+            id="taskPriority"
+            required
+            class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          >
+            <option value="alta">Alta</option>
+            <option value="media">Media</option>
+            <option value="baja">Baja</option>
+          </select>
+        </div>
+
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="taskDescription"
+            >Descripción:</label
+          >
+          <textarea
+            id="taskDescription"
+            required
+            class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          ></textarea>
+        </div>
+
+        <div class="flex justify-end">
+          <button
+            type="submit"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+          >
+            Agregar Tarea
+          </button>
+          <button
+            type="button"
+            onclick="clearForm()"
+            class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Limpiar Formulario
+          </button>
+        </div>
+      </form>
+
+      <h2 class="text-2xl font-bold mb-4">Tareas:</h2>
+      <table id="taskTable" class="w-full">
+        <thead>
+          <tr>
+            <th class="bg-gray-200 text-left px-4 py-2">Nombre de la Tarea</th>
+            <th class="bg-gray-200 text-left px-4 py-2">Fecha</th>
+            <th class="bg-gray-200 text-left px-4 py-2">Prioridad</th>
+            <th class="bg-gray-200 text-left px-4 py-2">Descripción</th>
+            <th class="bg-gray-200 text-left px-4 py-2">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Las tareas se agregan dinámicamente aquí mediante JavaScript -->
+        </tbody>
+      </table>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

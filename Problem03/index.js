@@ -31,10 +31,10 @@ export const isSecurePassword = (password) => {
   let hasLowerCase = false;
   let hasUpperCase = false;
   for (let char of password) {
-    if (char >= "a" && char <= "z") {
+    if (char >= 'a' && char <= 'z') {
       hasLowerCase = true;
     }
-    if (char >= "A" && char <= "Z") {
+    if (char >= 'A' && char <= 'Z') {
       hasUpperCase = true;
     }
   }
@@ -44,11 +44,7 @@ export const isSecurePassword = (password) => {
 
   // Requerimiento 3: No puede tener 2 letras iguales consecutivas.
   for (let i = 0; i < password.length - 1; i++) {
-    if (
-      password[i] === password[i + 1] &&
-      ((password[i] >= "a" && password[i] <= "z") ||
-        (password[i] >= "A" && password[i] <= "Z"))
-    ) {
+    if (password[i] === password[i + 1] && (password[i] >= 'a' && password[i] <= 'z' || password[i] >= 'A' && password[i] <= 'Z')) {
       return false;
     }
   }
@@ -56,7 +52,7 @@ export const isSecurePassword = (password) => {
   // Requerimiento 4: Debe contener al menos 4 números.
   let numCount = 0;
   for (let char of password) {
-    if (char >= "0" && char <= "9") {
+    if (char >= '0' && char <= '9') {
       numCount++;
     }
   }
@@ -66,11 +62,7 @@ export const isSecurePassword = (password) => {
 
   // Requerimiento 5: No puede tener 2 números iguales consecutivos.
   for (let i = 0; i < password.length - 1; i++) {
-    if (
-      password[i] === password[i + 1] &&
-      password[i] >= "0" &&
-      password[i] <= "9"
-    ) {
+    if (password[i] === password[i + 1] && password[i] >= '0' && password[i] <= '9') {
       return false;
     }
   }
@@ -102,21 +94,18 @@ export const isSecurePassword = (password) => {
 
   // Requerimiento 8: Los caracteres especiales no pueden estar juntos.
   for (let i = 0; i < password.length - 1; i++) {
-    if (
-      specialCharacters.has(password[i]) &&
-      specialCharacters.has(password[i + 1])
-    ) {
+    if (specialCharacters.has(password[i]) && specialCharacters.has(password[i + 1])) {
       return false;
     }
   }
 
   // Requerimiento 9: No se puede usar el número 0.
-  if (password.includes("0")) {
+  if (password.includes('0')) {
     return false;
   }
 
   // Requerimiento 10: No se puede colocar espacios.
-  if (password.includes(" ")) {
+  if (password.includes(' ')) {
     return false;
   }
 
